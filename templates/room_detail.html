@@ -12,6 +12,15 @@ $def with (house, room, coms)
     <link rel="stylesheet" type="text/css" href="/static/style.css">
     <link rel="stylesheet" type="text/css" href="/static/list_style.css">
   </head>
+  
+  <script>
+    function load() {
+      $$('#attr_list').slimScroll({
+        height: '90%',
+        width: '39%'
+      });
+    }
+  </script>
 
   <body class="container">
     <h1>$(house.name) - $(room.room_no)</h1>

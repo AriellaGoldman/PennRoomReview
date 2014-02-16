@@ -18,3 +18,12 @@
   margin-right: 10%;
   width: 39%;
 }
+
+#attr_list {
+  border: 1px solid;
+  float: right;
+  margin: 0px;
+  margin-right: 10%;
+  width: 39%;
+  text-align: center;
+}
