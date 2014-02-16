@@ -46,5 +46,10 @@ h1 {
 }
 
 #house_list {
+  margin-top: 2%:
+  list-style-type: none;
+}
+
+#house_list > li {
   list-style-type: none;
 }
