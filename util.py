@@ -4,7 +4,7 @@ import status
 # try to connect to the config database
 db_vars = {
   'dbn': 'sqlite',
-  'db': 'wsid.db'
+  'db': 'prr.db'
 }
 conf_db = web.database(**db_vars)
 
