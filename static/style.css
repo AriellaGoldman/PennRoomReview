@@ -3,20 +3,18 @@ html {
   height: 100%;
   margin: 0px;
   padding: 0px;
+  background-image:url("BackgroundGeneral.png");
+  font-family: "Happy Monkey";
 }
 
 body{
   margin-top: 7%;   
-  font-family: "Happy Monkey";
   text-align:center;
-  background-color: rgba(255,255,255,255);
-  background-image:url("BackgroundGeneral.png");
 }
 
 h1 {
     text-align: center;
     color:#000000;
-
 }
 
 #front_example{
