@@ -25,9 +25,7 @@ h1 {
 
 #main_div {
   height: 50px;
-  margin-left: 25%;
-  margin-right: 25%;
-  width: 50%;
+  width: 100%;
 }
 
 #main_div > * {
