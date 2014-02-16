@@ -4,6 +4,7 @@ html,body {
   margin: 0px;
   padding: 0px;
   font-family: "Happy Monkey" !important;
+  overflow: hidden;
 }
 
 body {
@@ -12,7 +13,6 @@ body {
   text-align:center;
   background-image:url("BackgroundGeneral.png");
   background-size: 100% 100%;
-  overflow: hidden;
 }
 
 h1 {
