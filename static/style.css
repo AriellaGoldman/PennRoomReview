@@ -46,7 +46,8 @@ h1 {
 }
 
 #house_list {
-  margin-top: 2%;
+  margin: 2% 0px 0px 0px;
+  padding: 0px;
   list-style-type: none;
 }
 
