@@ -27,3 +27,9 @@
   width: 39%;
   text-align: center;
 }
+
+#room_plan {
+  width: 39%;
+  max-height: 60%;
+  margin-bottom: 2%;
+}
