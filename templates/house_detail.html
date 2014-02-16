@@ -1,44 +1,49 @@
 $def with (house, hcoms, rooms)
 
-<head>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src='/static/jquery.slimscroll.min.js'></script>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-  <link href='http://fonts.googleapis.com/css?family=Happy+Monkey' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="/static/style.css">
-  <link rel="stylesheet" type="text/css" href="/static/list_style.css">
-</head>
+<!DOCTYPE html>
+<html>
+  <head>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <script src='/static/jquery.slimscroll.min.js'></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Happy+Monkey' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/list_style.css">
+  </head>
 
-<script>
-  $$('#room_list').slimScroll({
-    height: '75%'
-  });
-</script>
+  <script>
+    function load() {
+      $$('#room_list').slimScroll({
+        height: '75%'
+      });
+    }
+  </script>
 
-<body>
-  <h1>$house.name</h1>
-  
-  <div id='com_list' class='list'>
-    <ul>
-      $for com in hcoms:
-        $com.com
-    </ul>
-    <div id='com_box' contentEditable='true'></div>
-    <input type='button' value='Comment'>
-  </div>
+  <body class="container" onload="load()">
+    <h1>$house.name</h1>
+    
+    <div id='com_list' class='list'>
+      <ul>
+        $for com in hcoms:
+          $com.com
+      </ul>
+      <div id='com_box' contentEditable='true'></div>
+      <input type='button' value='Comment'>
+    </div>
 
-  <div id='room_list' class='list'>
-    <table>
-      <tr>
-        <td>Room #</td>
-      </tr>
-      $for r in rooms:
+    <div id='room_list' class='list'>
+      <table>
         <tr>
-          <td>$r.id</td>
+          <td>Room #</td>
         </tr>
-    </table>
-  </div>
+        $for r in rooms:
+          <tr>
+            <td>$r.id</td>
+          </tr>
+      </table>
+    </div>
 
-</body>
+  </body>
+</html>
