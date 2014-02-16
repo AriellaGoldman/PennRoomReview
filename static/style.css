@@ -8,11 +8,17 @@ html,body {
 }
 
 body {
-  margin-top: 5%;
-  height: 95%; 
-  text-align:center;
+  padding-bottom:32px;
+  text-align: center;
   background-image:url("BackgroundGeneral.png");
   background-size: 100% 100%;
+}
+
+footer {
+  position: fixed;
+  height: 32px;
+	bottom: 0px;
+  width: 100%;
 }
 
 h1 {
@@ -26,13 +32,17 @@ h1 {
 }
 
 #main_div {
+  margin-top: 5%;
   height: 50px;
   background-color: rgba(245, 245, 245, 0.0);
 }
 
 #main_div > * {
   height: 100%;
-  display: inline;
+}
+
+#main_div > img {
+  margin-bottom: 6px;
 }
 
 #main_div > input {
@@ -41,16 +51,17 @@ h1 {
   width: 40%;
 }
 
-.footer{
-  text-align: right;
-}
-
-#house_list {
-  margin: 2% 0px 0px 0px;
+ul {
+  margin: 0% 0px 0px 0px;
   padding: 0px;
   list-style-type: none;
 }
 
-#house_list > li {
+#com_list ul > li {
   list-style-type: none;
+  display: block;
+  min-height: 16px;
+  width: 98%;
+  margin: 1%;
+  border: 1px solid;
 }

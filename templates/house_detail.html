@@ -15,7 +15,12 @@ $def with (house, hcoms, rooms)
 
   <script>
     function load() {
-      $$('#sub_com').slimScroll({
+      $$('#sub_com > ul').slimScroll({
+        height: '100%',
+        width: '100%'
+      });
+      
+      $$('#com_box').slimScroll({
         height: '100%',
         width: '100%'
       });
@@ -25,39 +30,86 @@ $def with (house, hcoms, rooms)
         width: '100%'
       });
     }
+    
+    function doComment() {
+      var com = $$('#com_box').html();
+      $$.ajax({
+        type: 'POST',
+        success: function(result) {
+          location.reload()
+        },
+        processData: false,
+        data: com
+      });
+    }
   </script>
 
   <body onload="load()">
+    
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <ul style='width:100%' class="nav navbar-nav">
+          <li style='font-weight: 700; font-size: 125%'><a href="/">Penn Room Review</a></li>
+
+          <li class='pull-right'><a href="/about">About</a></li>
+        </ul>
+    </nav>
+    
+    
     <h1>$house.name</h1>
     
     <div id='com_list' class='list'>
-      <div id='sub_com'>
+      <div id='sub_com' style='height: 68%; margin: 1% 0 1% 0'>
+        $if len(hcoms) == 0:
+          <span>No reviews</span>
         <ul>
           $for com in hcoms:
-            $com.com
+            <li class='comment'>$com.com</li>
         </ul>
-        <div id='com_box' contentEditable='true'></div>
-        <input type='button' value='Comment'>
       </div>
+      <div  style='height: 24%; width: 98%; margin: 0 1% 0 1%'>
+        <div id='com_box' contentEditable='true'></div>
+      </div>
+      <input style='height: 6%; width: 6em' type='button' value='Comment' onclick='doComment()'>
     </div>
 
     <div id='room_list' class='list'>
       <div id='sub_room'>
+        $if len(rooms) == 0:
+          <span>No rooms listed</span>
         <table class='table table-condensed table-striped'>
-          <tr>
-            <td>#</td>
-            <td>Capacity</td>
-            <td>Bedrooms</td>
-          </tr>
           $for r in rooms:
+            $if loop.index0 % 15 == 0:
+              <tr>
+                <td>#</td>
+                <td>Capacity</td>
+                <td>Bedrooms</td>
+                <td>Bathroom</td>
+                <td>Kitchen</td>
+                <td>Common Room</td>
+              </tr>
             <tr>
               <td><a href='/room/$r.id'>$r.room_no</a></td>
               <td>$r.cap</td>
               <td>$r.bed</td>
+              $if r.bath:
+                <td>X</td>
+              $else:
+                <td></td>
+              $if r.kit:
+                <td>X</td>
+              $else:
+                <td></td>
+              $if r.common:
+                <td>X</td>
+              $else:
+                <td></td>
             </tr>
         </table>
       </div>
     </div>
 
   </body>
+  <footer>
+        By Krupcake, Shkoyach, Luscious, Samsicle - Copyright 2014
+  </footer>
 </html>

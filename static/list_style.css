@@ -4,21 +4,24 @@
 }
 
 #com_list {
-  border: 1px solid;
   float: left;
   margin: 0px;
   margin-left: 10%;
   width: 39%;
-  max-height: 75%;
+  height: 70%;
+}
+
+#sub_com {
+  border: 1px solid;
 }
 
 #room_list {
-  border: 1px solid;
   float: right;
   margin: 0px;
   margin-right: 10%;
   width: 39%;
-  max-height: 75%;
+  height: 70%;
+  border: 1px solid;
 }
 
 #lcol {
@@ -38,6 +41,10 @@
 
 #room_plan {
   max-width: 100%;
-  max-height: 60%;
+  max-height: 40%;
   margin-bottom: 2%;
+}
+
+#com_box {
+  border: 1px solid;
 }

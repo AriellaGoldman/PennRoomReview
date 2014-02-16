@@ -11,34 +11,59 @@ urls = (
   '/house/?', 'HouseList',
   '/house/([0-9]+)/?', 'HouseDetail',
   '/room/([0-9]+)/?', 'RoomDetail',
-  '/u/([a-zA-Z_.]+)/?', 'Static'
+  '/([a-zA-Z_.]+)/?', 'Static'
 )
+
+from HTMLParser import HTMLParser
+
+class MLStripper(HTMLParser):
+    def __init__(self):
+        self.reset()
+        self.fed = []
+    def handle_data(self, d):
+        self.fed.append(d)
+    def get_data(self):
+        return ''.join(self.fed)
+
+def strip_tags(html):
+    s = MLStripper()
+    s.feed(html)
+    return s.get_data()
 
 class HouseList(object):
   def GET(self):
-    var = web.input(limit=10, offset=0)
-    houses = util.select('houses', limit=var.limit)
+    houses = util.select('houses')
     raise status.ApiReturn('templates/house_list', houses)
 
 class HouseDetail(object):
   def GET(self, hid):
     house = util.select_one('houses', where='id=$hid', vars={'hid': hid})
     hcom = util.select('house_com', where='house_id=$hid',  vars={'hid': hid})
-    rooms = util.select('rooms', where='house_id=$hid',  vars={'hid': hid})
+    rooms = util.select('rooms', where='house_id=$hid',  vars={'hid': hid}, order='room_no ASC')
     
-    raise status.ApiReturn('templates/house_detail', house, hcom, rooms)
+    raise status.ApiReturn('templates/house_detail', house, list(hcom), list(rooms))
+  
+  def POST(self,hid):
+    var = web.data()
+    util.insert('house_com', com=strip_tags(var), house_id=hid)
 
 class RoomDetail(object):
   def GET(self, rid):
-    room = util.select_one('rooms', where='id=$rid',  vars={'rid': rid}, order='room_no ASC')
+    room = util.select_one('rooms', where='id=$rid',  vars={'rid': rid})
     house = util.select_one('houses', where='id=$hid',  vars={'hid': room.house_id})
     coms = util.select('room_com', where='room_id=$rid',  vars={'rid': rid})
     
-    raise status.ApiReturn('templates/room_detail', house, room, coms) 
+    raise status.ApiReturn('templates/room_detail', house, room, list(coms)) 
+  
+  def POST(self,rid):
+    var = web.data()
+    util.insert('room_com', com=strip_tags(var), room_id=rid)
 
 class Static(object):
   def GET(self,page):
     raise status.ApiReturn('static/' + page)
+
+
 
 '''
 

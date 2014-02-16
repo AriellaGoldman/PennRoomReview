@@ -13,14 +13,15 @@ $def with (houses)
     <link rel="stylesheet" type="text/css" href="/static/list_style.css">
   </head>
 
-  <body class="container">
-    <h1>Penn Room Review</h1>
-    <div class="center-block">
-      <div id='main_div'>
-        <input type='text' class='form-inline'/> 
-        <img src="/static/SearchButton.png"/>
-      </div>
+  <body>
+    <div id='main_div' class="center-block">
+      <h1 style='display: block'>Penn Room Review</h1>
+
+<!---
+      <input type='text' class='form-inline'/> 
+      <img src="/static/SearchButton.png"/>
       <div id='front_example'>Search for a dorm building or room. (Ex. Rodin 1910) </div>
+-->
       
       <ul id='house_list'>
         $for h in houses:
@@ -30,4 +31,8 @@ $def with (houses)
       </ul>
     </div>
   </body>
+  
+  <footer class="navbar navbar-fixed-bottom">
+        By Krupcake, Shkoyach, Luscious, Samsicle - Copyright 2014
+	 </footer>
 </html>
