@@ -9,10 +9,24 @@ import uuid
 urls = (
   '/', 'Index',
   '/q/?', 'HouseList',
-  '/q/([a-z]+)/?', 'HouseDetail',
-  '/q/([a-z]+)/([0-9]+)/?', 'RoomList',
+  '/q/([0-9]+)/?', 'HouseDetail',
+  '/q/([0-9]+)/([0-9]+)/?', 'RoomDetail',
   '/u/([a-zA-Z_.]+)/?', 'Static'
 )
+
+class HouseList(object):
+  def GET(self):
+    var = web.input(limit=10, offset=0)
+    houses = util.select('houses', limit=var.limit)
+    raise status.ApiReturn('house_list', houses)
+
+class HouseDetail(object):
+  def GET(self, hid):
+    house = util.select_one('houses', where='id=$hid', vars={'hid': hid})
+    hcom = util.select('house_com', where='house_id=$hid',  vars={'hid': hid})
+    rooms = util.select('rooms', where='house_id=$hid',  vars={'hid': hid})
+    
+    raise status.ApiReturn('house_detail', house, hcom, rooms)
 
 class Index(object):
   def GET(self):
@@ -23,6 +37,8 @@ class Static(object):
   def GET(self,page):
     sess = util.get_sess()
     raise status.ApiReturn('static/' + page, sess)
+
+'''
 
 class RealQPage(object):
   def GET(self,q):
@@ -165,6 +181,7 @@ class Login(object):
       
     web.redirect('/')
     #raise status.ApiError('200 OK')
+'''
 
 if __name__ == "__main__":
   app = web.application(urls, globals())

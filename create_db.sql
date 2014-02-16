@@ -8,7 +8,8 @@ CREATE TABLE users (
 
 CREATE TABLE rooms (
   id INTEGER PRIMARY KEY,
-  hid INTEGER,
+  house_id INTEGER,
+  img VARCHAR(80)
   up INTEGER,
   down INTEGER,
   
@@ -18,7 +19,7 @@ CREATE TABLE rooms (
   bath BOOLEAN,
   tub BOOLEAN,
   kit BOOLEAN,
-  common BOOLEAN
+  common BOOLEAN,
 );
 
 CREATE TABLE room_com (

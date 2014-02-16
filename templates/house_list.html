@@ -1,11 +1,14 @@
 $def with (houses)
 
-<table>
-  <tr>
-    <td>House</td>
-  </tr>
-  $for h in houses:
+<body>
+  <h1>College Houses</h1>
+  <table>
     <tr>
-      <td>$h.name</td>
+      <td>House</td>
     </tr>
-</table>
+    $for h in houses:
+      <tr>
+        <td>$h.name</td>
+      </tr>
+  </table>
+</body>
