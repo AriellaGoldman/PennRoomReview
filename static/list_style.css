@@ -9,11 +9,13 @@ table.list tr:first-child {
 #com_list {
   border: 1px solid;
   float: left;
+  margin: 0px;
   margin-left: 10%;
 }
 
 #room_list {
   border: 1px solid;
   float: right;
+  margin: 0px;
   margin-right: 10%;
 }
