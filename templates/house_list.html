@@ -21,14 +21,11 @@ $def with (houses)
     </div>
     <div id='front_example'>Search for a dorm building or room. (Ex. Rodin 1910) </div>
     
-    <table class="center-block">
-      <tr>
-        <td>House</td>
-      </tr>
+    <ul id='house_list' class="center-block">
       $for h in houses:
-        <tr>
-          <td><a href='/q/$h.id'>$h.name</a></td>
-        </tr>
-    </table>
+        <li>
+          <a href='/q/$h.id'>$h.name</a>
+        </li>
+    </ul>
   </body>
 </html>
