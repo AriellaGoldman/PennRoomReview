@@ -30,7 +30,7 @@ class HouseDetail(object):
 
 class RoomDetail(object):
   def GET(self, rid):
-    room = util.select_one('rooms', where='id=$rid',  vars={'rid': rid})
+    room = util.select_one('rooms', where='id=$rid',  vars={'rid': rid}, order='room_no ASC')
     house = util.select_one('houses', where='id=$hid',  vars={'hid': room.house_id})
     coms = util.select('room_com', where='room_id=$rid',  vars={'rid': rid})
     
