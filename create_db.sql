@@ -8,6 +8,7 @@ CREATE TABLE users (
 
 CREATE TABLE rooms (
   id INTEGER PRIMARY KEY,
+  room_no INTEGER,
   house_id INTEGER,
   img VARCHAR(80),
   up INTEGER,
