@@ -17,12 +17,12 @@ $def with (house, hcoms, rooms)
     function load() {
       $$('#room_list').slimScroll({
         height: '75%',
-        width: '39%'
+        width: '100%'
       });
     }
   </script>
 
-  <body onload="load()">
+  <body onload="load()" class='container'>
     <h1>$house.name</h1>
     
     <div id='com_list' class='list'>
