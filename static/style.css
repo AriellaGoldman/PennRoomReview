@@ -6,12 +6,6 @@ html {
   font-family: "Happy Monkey" !important;
 }
 
-@font-face {
-  font-family: "Happy Monkey" !important;
-  font-style:  normal;
-  font-weight: 400;
-}
-
 body{
   margin-top: 7%;   
   text-align:center;
