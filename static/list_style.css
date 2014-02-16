@@ -6,10 +6,12 @@ table.list tr:first-child {
   border: 1px solid;
   float: left;
   margin-left: 10%;
+  width: 39%;
 }
 
 #room_list {
   border: 1px solid;
   float: right;
   margin-right: 10%;
+  width: 39%;
 }
