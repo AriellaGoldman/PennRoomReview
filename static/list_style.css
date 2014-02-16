@@ -31,6 +31,7 @@
 #lcol > table {
   margin-left: auto;
   margin-right: auto;
+  width: 80%;
 }
 
 #room_plan {
