@@ -1,7 +1,11 @@
 $def with (house, hcoms, rooms)
 
-<body>
+<head>
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <link rel="stylesheet" type="text/css" href="/static/list_style.css">
+</head>
 
+<body>
   <ul class='list' id='com_list'>
     $for com in hcoms:
       $com.com
