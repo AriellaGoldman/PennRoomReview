@@ -15,8 +15,12 @@ $def with (house, hcoms, rooms)
 
   <script>
     function load() {
+      $$('#com_list').slimScroll({
+        height: '90%',
+        width: '39%'
+      });
       $$('#room_list').slimScroll({
-        height: '75%',
+        height: '90%',
         width: '39%'
       });
     }
