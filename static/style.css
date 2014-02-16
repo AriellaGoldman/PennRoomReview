@@ -24,10 +24,11 @@ h1 {
 }
 
 #search_button{
+    height: 12px;
     display: inline;
 }
 #search{
-    height: 7%;
+    height: 12px;
     width: 40%;
     text-align: left;
 }
