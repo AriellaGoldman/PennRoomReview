@@ -43,10 +43,6 @@ h1 {
   text-align: right;
 }
 
-#house_list {
-  display: block;
-}
-
 .list {
   overflow: hidden;
   height: 75%;

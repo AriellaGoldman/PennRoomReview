@@ -9,9 +9,14 @@ $def with (house, hcoms, rooms)
   <link rel="stylesheet" type="text/css" href="/static/list_style.css">
 </head>
 
+<script>
+  $('#room_list').slimScroll({
+    height: '100%'
+  });
+</script>
+
 <body>
   <h1>$house.name</h1>
-  
   
   <div id='com_list' class='list'>
     <ul>
