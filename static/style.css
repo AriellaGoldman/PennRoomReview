@@ -35,17 +35,10 @@ h1 {
 
 #main_div > input {
   text-align: left;
-  font-size: 205%;
+  font-size: 48px;
   width: 40%;
 }
 
 .footer{
   text-align: right;
 }
-
-.list {
-  overflow: hidden;
-  height: 75%;
-  width: 100%;
-}
-
