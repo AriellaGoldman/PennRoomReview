@@ -23,16 +23,20 @@ h1 {
     color:#FFFFFF;
 }
 
-#search_button{
+#main_div {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#main_div > * {
     height: 50px;
     display: inline;
     float: left;
 }
+
 #search{
-    height: 50px;
     width: 40%;
     text-align: left;
-    float: left;
 }
 
 .footer{
