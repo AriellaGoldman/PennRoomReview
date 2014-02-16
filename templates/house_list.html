@@ -23,11 +23,11 @@ $def with (houses)
     
     <table>
       <tr>
-        <td>House</td><td>Floors</td><td>Student Population</td>
+        <td>House</td>
       </tr>
       $for h in houses:
         <tr>
-          <td>$h.name</td><td>$h.floors</td><td>$h.pop</td>
+          <a href='/q/$h.id'><td>$h.name</td></a>
         </tr>
     </table>
   </body>
