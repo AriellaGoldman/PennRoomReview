@@ -3,15 +3,20 @@ $def with (house, hcoms, rooms)
 <head>
   <link rel="stylesheet" type="text/css" href="/static/style.css">
   <link rel="stylesheet" type="text/css" href="/static/list_style.css">
+  <link href='http://fonts.googleapis.com/css?family=Happy+Monkey' rel='/static/stylesheet' type='text/css'>
 </head>
 
 <body>
   <h1>Stuff about the house</h1>
   
-  <ul class='list' id='com_list'>
-    $for com in hcoms:
-      $com.com
-  </ul>
+  <div id='com_list'>
+    <ul class='list'>
+      $for com in hcoms:
+        $com.com
+    </ul>
+    <div id='com_box' contentEditable='true'></div>
+    <input type='button' value='Comment'>
+  </div>
 
   <table class='list' id='room_list'>
     <tr>
