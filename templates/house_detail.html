@@ -20,7 +20,7 @@ $def with (house, hcoms, rooms)
         width: '39%'
       });
       
-      $$('#room_list').slimScroll({
+      $$('#sub_room').slimScroll({
         height: '90%',
         width: '39%'
       });
@@ -42,19 +42,21 @@ $def with (house, hcoms, rooms)
     </div>
 
     <div id='room_list' class='list'>
-      <table class='table table-condensed table-striped'>
-        <tr>
-          <td>#</td>
-          <td>Capacity</td>
-          <td>Bedrooms</td>
-        </tr>
-        $for r in rooms:
+      <div id='sub_room'>
+        <table class='table table-condensed table-striped'>
           <tr>
-            <td><a href='/room/$r.id'>$r.room_no</a></td>
-            <td>$r.cap</td>
-            <td>$r.bed</td>
+            <td>#</td>
+            <td>Capacity</td>
+            <td>Bedrooms</td>
           </tr>
-      </table>
+          $for r in rooms:
+            <tr>
+              <td><a href='/room/$r.id'>$r.room_no</a></td>
+              <td>$r.cap</td>
+              <td>$r.bed</td>
+            </tr>
+        </table>
+      </div>
     </div>
 
   </body>
