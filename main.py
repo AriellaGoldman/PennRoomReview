@@ -31,9 +31,10 @@ class HouseDetail(object):
 class RoomDetail(object):
   def GET(self, rid):
     room = util.select_one('rooms', where='id=$rid',  vars={'rid': rid})
+    house = util.select_one('houses', where='id=$hid',  vars={'hid': room.house_id})
     coms = util.select('room_com', where='room_id=$rid',  vars={'rid': rid})
     
-    raise status.ApiReturn('templates/room_detail', room, coms) 
+    raise status.ApiReturn('templates/room_detail', house, room, coms) 
 
 class Static(object):
   def GET(self,page):

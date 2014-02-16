@@ -1,4 +1,4 @@
-$def with (room, coms)
+$def with (house, room, coms)
 
 <!DOCTYPE html>
 <html>
@@ -14,6 +14,48 @@ $def with (room, coms)
   </head>
 
   <body class="container">
+    <h1>$(house.name) - $(room.room_no)</h1>
     <img src='$room.img' height='150px'/>
+    
+    <div id='com_list' class='list'>
+      <ul>
+        $for com in hcoms:
+          $com.com
+      </ul>
+      <div id='com_box' contentEditable='true'></div>
+      <input type='button' value='Comment'>
+    </div>
+
+    <table id='attr_list' class='list'>
+      <tr>
+        <td>Capacity</td>
+        <td>$room.cap</td>
+      </tr>
+      <tr>
+        <td>Bedrooms</td>
+        <td>$room.bed</td>
+      </tr>
+      <tr>
+        <td>Bathroom</td>
+        $if room.bath:
+          <td>YES</td>
+        $else room.bath:
+          <td>NO</td>
+      </tr>
+      <tr>
+        <td>Kitchen</td>
+        $if room.kit:
+          <td>YES</td>
+        $else room.kit:
+          <td>NO</td>
+      </tr>
+      <tr>
+        <td>Common Room</td>
+        $if room.common:
+          <td>YES</td>
+        $else room.common:
+          <td>NO</td>
+      </tr>
+    </table>
   </body>
 </html>
