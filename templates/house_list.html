@@ -9,16 +9,16 @@ $def with (houses)
   <link rel="stylesheet" type="text/css" href="/static/list_style.css">
 </head>
 
-<body>
+<body class="container">
   <h1>College Houses</h1>
   
   <table>
     <tr>
-      <td>House</td>
+      <td>House</td><td>Floors</td><td>Student Population</td>
     </tr>
     $for h in houses:
       <tr>
-        <td>$h.name</td>
+        <td>$h.name</td><td>$h.floors</td><td>$h.pop</td>
       </tr>
   </table>
 </body>
