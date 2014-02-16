@@ -8,9 +8,9 @@ import uuid
 
 urls = (
   '/', 'Index',
-  '/q/?', 'HouseList',
-  '/q/([0-9]+)/?', 'HouseDetail',
-  '/q/([0-9]+)/([0-9]+)/?', 'RoomDetail',
+  '/house/?', 'HouseList',
+  '/house/([0-9]+)/?', 'HouseDetail',
+  '/room/([0-9]+)/?', 'RoomDetail',
   '/u/([a-zA-Z_.]+)/?', 'Static'
 )
 
@@ -27,6 +27,14 @@ class HouseDetail(object):
     rooms = util.select('rooms', where='house_id=$hid',  vars={'hid': hid})
     
     raise status.ApiReturn('templates/house_detail', house, hcom, rooms)
+
+class RoomDetail(object):
+  def GET(self, rid):
+    room = util.select_one('rooms', where='id=$rid',  vars={'rid': rid})
+    coms - util.select('room_com', where='room_id=$rid',  vars={'rid': rid})
+    
+    raise status.ApiReturn('templates/room_detail', room, coms) 
+    
 
 class Index(object):
   def GET(self):
