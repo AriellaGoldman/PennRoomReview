@@ -1,12 +1,9 @@
-html {
+html,body {
   width: 100%;
   height: 100%;
   margin: 0px;
   padding: 0px;
   font-family: "Happy Monkey" !important;
-}
-
-body{
   margin-top: 7%;   
   text-align:center;
   background-image:url("BackgroundGeneral.png");
@@ -35,7 +32,7 @@ h1 {
 
 #main_div > input {
   text-align: left;
-  font-size: 48px;
+  font-size: 24px;
   width: 40%;
 }
 

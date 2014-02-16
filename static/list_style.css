@@ -2,10 +2,6 @@ table.list tr:first-child {
   background-color: rgb(200,200,200);
 }
 
-.list {
-  height: 75%;
-}
-
 .list > * {
   width: 100%;
 }
