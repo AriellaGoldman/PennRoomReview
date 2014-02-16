@@ -25,13 +25,12 @@ h1 {
 
 #main_div {
   height: 50px;
-  width: 100%;
+  background-color: rgba(245, 245, 245, 0.0);
 }
 
 #main_div > * {
   height: 100%;
   display: inline;
-  float: left;
 }
 
 #main_div > input {
