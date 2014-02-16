@@ -20,14 +20,14 @@ h1 {
 
 #front_example{
     text-align: center;
-    color:#FFFFFF;
+    color: #FFFFFF;
 }
 
 #main_div {
   height: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 45%;
+  margin-left: 25%;
+  margin-right: 25%;
+  width: 50%;
 }
 
 #main_div > * {
