@@ -38,6 +38,7 @@ h1 {
 
 #main_div > input {
   text-align: left;
+  width: 40%;
 }
 
 .footer{
