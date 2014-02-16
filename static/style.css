@@ -27,6 +27,7 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   height: 50px;
+  display: inline-block;
 }
 
 #main_div > * {
