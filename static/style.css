@@ -30,16 +30,16 @@ h1 {
 }
 
 #main_div > * {
-    height: 100%;
-    display: inline;
-    float: left;
+  height: 100%;
+  display: inline;
+  float: left;
 }
 
 #main_div > input {
-    width: 40%;
-    text-align: left;
+  width: 40%;
+  text-align: left;
 }
 
 .footer{
-    text-align: right;
+  text-align: right;
 }
