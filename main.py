@@ -8,13 +8,10 @@ import uuid
 
 urls = (
   '/', 'Index',
-  '/u/questions/([0-9]+)', 'RealQPage',
-  '/u/([a-zA-Z_.]+)', 'Static',
-  '/q/?', 'QList',
-  '/q/([0-9]+)/?', 'QPage',
-  '/s/logout/?', 'Logout',
-  '/s/login/?', 'Login',
-  '/s/register/?', 'Register'
+  '/q/?', 'HouseList',
+  '/q/([a-z]+)/?', 'HouseDetail',
+  '/q/([a-z]+)/([0-9]+)/?', 'RoomList',
+  '/u/([a-zA-Z_.]+)/?', 'Static'
 )
 
 class Index(object):
