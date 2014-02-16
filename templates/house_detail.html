@@ -13,8 +13,8 @@ $def with (house, hcoms, rooms)
   <h1>$house.name</h1>
   
   
-  <div id='com_list'>
-    <ul class='list'>
+  <div id='com_list' class='list'>
+    <ul>
       $for com in hcoms:
         $com.com
     </ul>
@@ -22,14 +22,16 @@ $def with (house, hcoms, rooms)
     <input type='button' value='Comment'>
   </div>
 
-  <table class='list' id='room_list'>
-    <tr>
-      <td>Room #</td>
-    </tr>
-    $for r in rooms:
+  <div id='room_list' class='list'>
+    <table>
       <tr>
-        <td>$r.id</td>
+        <td>Room #</td>
       </tr>
-  </table>
+      $for r in rooms:
+        <tr>
+          <td>$r.id</td>
+        </tr>
+    </table>
+  </div>
 
 </body>

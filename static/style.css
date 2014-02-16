@@ -46,3 +46,8 @@ h1 {
 #house_list {
   display: block;
 }
+
+.list {
+  overflow: hidden;
+  height: 75%;
+}
