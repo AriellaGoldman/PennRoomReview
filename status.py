@@ -5,7 +5,7 @@ class ApiReturn(web.HTTPError):
     headers = {'Content-type': 'text/html'}
     status = '200 OK'
 
-    render = web.template.render('templates', globals={'hasattr':hasattr})
+    render = web.template.render('./', globals={'hasattr':hasattr})
     xml = getattr(render, template)
     message = xml(*args, **kwargs)
     web.HTTPError.__init__(self, status, headers, message)

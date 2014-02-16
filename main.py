@@ -18,7 +18,7 @@ class HouseList(object):
   def GET(self):
     var = web.input(limit=10, offset=0)
     houses = util.select('houses', limit=var.limit)
-    raise status.ApiReturn('house_list', houses)
+    raise status.ApiReturn('templates/house_list', houses)
 
 class HouseDetail(object):
   def GET(self, hid):
@@ -26,7 +26,7 @@ class HouseDetail(object):
     hcom = util.select('house_com', where='house_id=$hid',  vars={'hid': hid})
     rooms = util.select('rooms', where='house_id=$hid',  vars={'hid': hid})
     
-    raise status.ApiReturn('house_detail', house, hcom, rooms)
+    raise status.ApiReturn('templates/house_detail', house, hcom, rooms)
 
 class Index(object):
   def GET(self):
