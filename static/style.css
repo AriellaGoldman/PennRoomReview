@@ -8,7 +8,8 @@ html {
 
 body{
     margin-top: 7%;   
-    font-family: cambria;
+    font-family: "Montserrat";
+    text-align:center;
 }
 
 h1 {
@@ -23,5 +24,11 @@ h1 {
 }
 
 #search{
-    text-align: center;
+    height: 7%;
+    width: 40%;
+    text-align: left;
+}
+
+.footer{
+    text-align: right;
 }
