@@ -31,12 +31,12 @@ class HouseDetail(object):
 class Index(object):
   def GET(self):
     sess = util.get_sess()
-    raise status.ApiReturn('static/index', sess)
+    raise status.ApiReturn('static/index')
 
 class Static(object):
   def GET(self,page):
     sess = util.get_sess()
-    raise status.ApiReturn('static/' + page, sess)
+    raise status.ApiReturn('static/' + page)
 
 '''
 
