@@ -14,18 +14,26 @@ $def with (house, room, coms)
   </head>
   
   <script>
+    function load() {
+      $$('#sub_com').slimScroll({
+        height: '90%',
+        width: '39%'
+      });
+    }
   </script>
 
   <body class="container">
     <h1>$(house.name) - $(room.room_no)</h1>
     
     <div id='com_list' class='list'>
-      <ul>
-        $for com in coms:
-          $com.com
-      </ul>
-      <div id='com_box' contentEditable='true'></div>
-      <input type='button' value='Comment'>
+      <div id='sub_com'>
+        <ul>
+          $for com in coms:
+            $com.com
+        </ul>
+        <div id='com_box' contentEditable='true'></div>
+        <input type='button' value='Comment'>
+      </div>
     </div>
 
     <div id='lcol'>
