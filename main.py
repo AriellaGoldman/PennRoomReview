@@ -7,7 +7,7 @@ import bcrypt
 import uuid
 
 urls = (
-  '/', 'Index',
+  '/', 'HouseList',
   '/house/?', 'HouseList',
   '/house/([0-9]+)/?', 'HouseDetail',
   '/room/([0-9]+)/?', 'RoomDetail',
@@ -34,12 +34,6 @@ class RoomDetail(object):
     coms - util.select('room_com', where='room_id=$rid',  vars={'rid': rid})
     
     raise status.ApiReturn('templates/room_detail', room, coms) 
-    
-
-class Index(object):
-  def GET(self):
-    houses = util.select('houses')
-    raise status.ApiReturn('static/index', houses)
 
 class Static(object):
   def GET(self,page):
