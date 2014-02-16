@@ -26,12 +26,14 @@ $def with (house, hcoms, rooms)
     <h1>$house.name</h1>
     
     <div id='com_list' class='list'>
-      <ul>
-        $for com in hcoms:
-          $com.com
-      </ul>
-      <div id='com_box' contentEditable='true'></div>
-      <input type='button' value='Comment'>
+      <div id='sub_com'>
+        <ul>
+          $for com in hcoms:
+            $com.com
+        </ul>
+        <div id='com_box' contentEditable='true'></div>
+        <input type='button' value='Comment'>
+      </div>
     </div>
 
     <div id='room_list' class='list'>
