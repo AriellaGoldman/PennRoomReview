@@ -43,7 +43,7 @@ $def with (house, hcoms, rooms)
         </tr>
         $for r in rooms:
           <tr>
-            <td><a href='/q/$house.id/$r.id'>$r.room_no</a></td>
+            <td><a href='/room/$r.id'>$r.room_no</a></td>
             <td>$r.cap</td>
             <td>$r.bed</td>
           </tr>
