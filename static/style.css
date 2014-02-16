@@ -4,6 +4,9 @@ html,body {
   margin: 0px;
   padding: 0px;
   font-family: "Happy Monkey" !important;
+}
+
+body {
   margin-top: 7%;   
   text-align:center;
   background-image:url("BackgroundGeneral.png");
