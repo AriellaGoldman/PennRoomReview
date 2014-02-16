@@ -20,13 +20,12 @@ h1 {
 
 #front_example{
     text-align: center;
-    color:#FFFFFF;
+    color: #FFFFFF;
 }
 
 #main_div {
-  margin-left: auto;
-  margin-right: auto;
   height: 50px;
+  width: 100%;
 }
 
 #main_div > * {
@@ -36,8 +35,8 @@ h1 {
 }
 
 #main_div > input {
-  width: 40%;
   text-align: left;
+  width: 40%;
 }
 
 .footer{
