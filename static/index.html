@@ -1,24 +1,36 @@
+$def with (houses)
+
 <!DOCTYPE html>
 <html lang="en">
 
   <head>
     <title>Penn Room Review</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Happy+Monkey' rel='/static/stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/static/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/static/style.css">
-   
   </head>
   
   <body class="container">
     <h1>Penn Room Review</h1>
+    
     <div id='main_div'>
       <input type='text' class='form-inline'/> 
       <img src="/static/SearchButton.png"/>
     </div>
     <div id='front_example'>Search for a dorm building or room. (Ex. Rodin 1910) </div>
+    
+    <table>
+      <tr>
+        <td>House</td>
+      </tr>
+      $for h in houses:
+        <tr>
+          <td>$h.name</td>
+        </tr>
+    </table>
   </body>
   
   <footer>

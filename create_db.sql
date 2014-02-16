@@ -33,6 +33,8 @@ CREATE TABLE room_com (
 CREATE TABLE houses (
   id INTEGER PRIMARY KEY,
   name VARCHAR(24),
+  floors INTEGER,
+  pop INTEGER,
   up INTEGER,
   down INTEGER
 );
