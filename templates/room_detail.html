@@ -24,7 +24,6 @@ $def with (house, room, coms)
 
   <body class="container">
     <h1>$(house.name) - $(room.room_no)</h1>
-    <img id='room_plan' src='$room.img'/>
     
     <div id='com_list' class='list'>
       <ul>
@@ -35,36 +34,39 @@ $def with (house, room, coms)
       <input type='button' value='Comment'>
     </div>
 
-    <table id='attr_list' class='list'>
-      <tr>
-        <td>Capacity</td>
-        <td>$room.cap</td>
-      </tr>
-      <tr>
-        <td>Bedrooms</td>
-        <td>$room.bed</td>
-      </tr>
-      <tr>
-        <td>Bathroom</td>
-        $if room.bath:
-          <td>YES</td>
-        $else:
-          <td>NO</td>
-      </tr>
-      <tr>
-        <td>Kitchen</td>
-        $if room.kit:
-          <td>YES</td>
-        $else:
-          <td>NO</td>
-      </tr>
-      <tr>
-        <td>Common Room</td>
-        $if room.common:
-          <td>YES</td>
-        $else:
-          <td>NO</td>
-      </tr>
-    </table>
+    <div id='lcol'>
+      <img id='room_plan' src='$room.img'/>
+      <table id='attr_list' class='list'>
+        <tr>
+          <td>Capacity</td>
+          <td>$room.cap</td>
+        </tr>
+        <tr>
+          <td>Bedrooms</td>
+          <td>$room.bed</td>
+        </tr>
+        <tr>
+          <td>Bathroom</td>
+          $if room.bath:
+            <td>YES</td>
+          $else:
+            <td>NO</td>
+        </tr>
+        <tr>
+          <td>Kitchen</td>
+          $if room.kit:
+            <td>YES</td>
+          $else:
+            <td>NO</td>
+        </tr>
+        <tr>
+          <td>Common Room</td>
+          $if room.common:
+            <td>YES</td>
+          $else:
+            <td>NO</td>
+        </tr>
+      </table>
+    </div>
   </body>
 </html>
