@@ -15,17 +15,19 @@ $def with (houses)
 
   <body class="container">
     <h1>Penn Room Review</h1>
-    <div id='main_div'>
-      <input type='text' class='form-inline'/> 
-      <img src="/static/SearchButton.png"/>
+    <div class="center-block">
+      <div id='main_div'>
+        <input type='text' class='form-inline'/> 
+        <img src="/static/SearchButton.png"/>
+      </div>
+      <div id='front_example'>Search for a dorm building or room. (Ex. Rodin 1910) </div>
+      
+      <ul id='house_list'>
+        $for h in houses:
+          <li>
+            <a href='/house/$h.id'>$h.name</a>
+          </li>
+      </ul>
     </div>
-    <div id='front_example'>Search for a dorm building or room. (Ex. Rodin 1910) </div>
-    
-    <ul id='house_list' class="center-block">
-      $for h in houses:
-        <li>
-          <a href='/house/$h.id'>$h.name</a>
-        </li>
-    </ul>
   </body>
 </html>
